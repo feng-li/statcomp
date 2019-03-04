@@ -1,8 +1,6 @@
-# Statistical Computing: Crouse Materials and Labs
+# Statistical Computing: Course Materials and Labs
 
-This is the public release version of my course material for Statistical Computing. For a
-outlook of recent teaching, please visit my [Statistical Computing
-Course](https://feng.li/teaching/sc2018spring/) homepage.
+This is the public release version of the course material for Statistical Computing.
 
 I hope these materials can help lecturers for their course development in Statistical
 Computing. If you like it, please **Star** it.
@@ -35,11 +33,12 @@ Computing. If you like it, please **Star** it.
 
 # Acknowledgements
 
-This course was developed by Feng Li in 2013 has been further improved by [Anastasios
+This course was developed by Feng Li in 2013 has been further improved by [Yanfei Kang](http://yanfei.site/), [Anastasios
 Panagiotelis](https://research.monash.edu/en/persons/anastasios-panagiotelis/publications/)
 when Prof Panagiotelis was visiting School of Statistics and Mathematics, Central
 University of Finance and Economics in 2015.
 
-The course is funded by the [2018 Quality Laboratory Crouse
-Project](http://jwc.cufe.edu.cn/info/1060/4184.htm) at Central University of Finance and
+# Awards
+
+- [2018 Quality Laboratory Course Project](http://jwc.cufe.edu.cn/info/1060/4184.htm) at Central University of Finance and
 Economics.
