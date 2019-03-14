@@ -86,18 +86,18 @@
 
 \item  Install and load the package
 \begin{verbatim}
-install.packages("XLConnect")
-library("XLConnect")
+install.packages("openxlsx")
+library("openxlsx")
 \end{verbatim}
 
 \item Read XLS Files
 
 \begin{verbatim}
-require("XLConnect")
-wb = loadWorkbook("XLConnectExample1.xlsx", create = TRUE)
-data = readWorksheet(wb, sheet = "chickSheet",
-                     startRow = 0, endRow = 10,
-                     startCol = 0, endCol = 0)
+require("openxlsx")
+mydata <- read.xlsx("MyFile.xlsx",
+                    sheet = 1,
+                    startRow = 1,
+                    colNames = TRUE)
 \end{verbatim}
   \end{itemize}
 \end{frame}
