@@ -317,3 +317,24 @@ logmygamma <- function(n)
 
     return(out)
 }
+
+
+mygamma <- function(n, log)
+{
+    if(n > 1)
+    {
+        out.log = mygamma(n-1, log=TRUE) + log(n-1)
+    }
+    else if (n  == 1)
+    {
+        out.log <- log(1)
+    }
+
+    if(log == TRUE)
+    {
+        out = out.log
+    }    else {
+        out = exp(out.log)
+    }
+    return(out)
+}
