@@ -49,3 +49,18 @@ A  = matrix(1:24, 4, 12)
 
 
 ## Array
+
+## Data Frame
+
+NM = c("Zhang3", "Li4", "Wang5")
+ID = c(201701, 201702, 201703)
+Stat = c(90, 59, 89)
+
+
+## List
+
+Class1 = data.frame(ID=ID, Stat=Stat)
+Class2 = matrix(1:24, 4, 6)
+Class3 = 1:10
+
+mylist = list(Class1, Class2, Class3)

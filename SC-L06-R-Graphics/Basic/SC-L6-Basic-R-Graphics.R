@@ -192,11 +192,12 @@ lines(x,dbeta(x,1,3),col="blue",lty=3)
 lines(x,dbeta(x,2,2), col="pink",lty=4)
 lines(x,dbeta(x,2,5), col="black",lty=5)
 lines(x,dbeta(x,1,1),col="orange",lty=6)
+
 legend("top",
 c("Beta(5,1)","Beta(.5,.5)","Beta(1,3)","Beta(2,2)","Beta(2,5)","Beta(1,1)"),
 lty=c(1,2,3,4,5,6),
 col=c("green","red","blue","pink","black","orange"),
-ncol=2)
+ncol=3)
 
 legend(x = 0.5, y =  1.5,
    c("Beta(5,1)","Beta(.5,.5)","Beta(1,3)","Beta(2,2)","Beta(2,5)","Beta(1,1)"),
