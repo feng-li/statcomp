@@ -538,125 +538,131 @@
 
   Has gradient vector
   \begin{equation}
-    \frac{\partial y}{\partial{\bm x}}=\left(\begin{array}{c}
-                                               2x_1-x_2\\
-                                               -x_1+2x_2+e^{x_2}
-                                             \end{array}
-                                           \right)
-                                         \end{equation}
-                                       \end{frame}
-                                       \begin{frame}{Second derivative}
-                                         Simply take the second order {\bf partial derivatives}.  This will give a matrix
-                                         \begin{equation}
-                                           \frac{\partial y}{\partial{\bm x}\partial{\bm x}'}=
-                                           \left(
-                                             \begin{array}{cccc}
-                                               \frac{\partial^2 y}{\partial x_1^2}&\frac{\partial^2 y}{\partial x_1\partial x_2}&\cdots&\frac{\partial^2 y}{\partial x_1\partial x_d}\\
-                                               \frac{\partial^2 y}{\partial x_2\partial x_1}&\frac{\partial^2 y}{\partial x_2^2}&\cdots&\frac{\partial^2 y}{\partial x_2\partial x_d}\\
-                                               \vdots&\vdots&\ddots&\vdots\\
-                                               \frac{\partial^2 y}{\partial x_d\partial x_1}&\frac{\partial^2 y}{\partial x_d\partial x_2}&\cdots&\frac{\partial^2 y}{\partial x_d^2}\\
-                                             \end{array}
-                                           \right)
-                                         \end{equation}
-                                         This is called the {\bf Hessian} matrix.
-                                       \end{frame}
-                                       \begin{frame}{An example}
-                                         The function
-                                         \begin{equation}
-                                           y=x_1^2-x_1x_2+x_2^2+e^{x_2}
-                                         \end{equation}
+    \frac{\partial y}{\partial{\bm x}}=
+    \left(
+      \begin{array}{c}
+        2x_1-x_2\\
+        -x_1+2x_2+e^{x_2}
+      \end{array}
+    \right)
+  \end{equation}
+\end{frame}
 
-                                         Has Hessian matrix
-                                         \begin{equation}
-                                           \frac{\partial y}{\partial{\bm x}\partial{\bm x}'}=\left(\begin{array}{cc}
-                                                                                                      2 & -1\\
-                                                                                                      -1 & 2 + e^{x_2}
-                                                                                                    \end{array}
-                                                                                                  \right)
-                                                                                                \end{equation}
-                                                                                              \end{frame}
+\begin{frame}{Second derivative}
+  Simply take the second order {\bf partial derivatives}.  This will give a matrix
+  \begin{equation}
+    \frac{\partial y}{\partial{\bm x}\partial{\bm x}'}=
+    \left(
+      \begin{array}{cccc}
+        \frac{\partial^2 y}{\partial x_1^2}&\frac{\partial^2 y}{\partial x_1\partial x_2}&\cdots&\frac{\partial^2 y}{\partial x_1\partial x_d}\\
+        \frac{\partial^2 y}{\partial x_2\partial x_1}&\frac{\partial^2 y}{\partial x_2^2}&\cdots&\frac{\partial^2 y}{\partial x_2\partial x_d}\\
+        \vdots&\vdots&\ddots&\vdots\\
+        \frac{\partial^2 y}{\partial x_d\partial x_1}&\frac{\partial^2 y}{\partial x_d\partial x_2}&\cdots&\frac{\partial^2 y}{\partial x_d^2}\\
+      \end{array}
+    \right)
+  \end{equation}
+  This is called the {\bf Hessian} matrix.
+\end{frame}
+
+\begin{frame}{An example}
+  The function
+  \begin{equation}
+    y=x_1^2-x_1x_2+x_2^2+e^{x_2}
+  \end{equation}
+
+  Has Hessian matrix
+  \begin{equation}
+    \frac{\partial y}{\partial{\bm x}\partial{\bm x}'}=
+    \left(
+      \begin{array}{cc}
+        2 & -1\\
+        -1 & 2 + e^{x_2}
+      \end{array}
+    \right)
+  \end{equation}
+\end{frame}
 
 \begin{frame}[allowframebreaks]
-\frametitle{Preliminaries for matrix derivatives}
+  \frametitle{Preliminaries for matrix derivatives}
 
-\begin{enumerate}
-\item The derivative of a vector $\mathbf{y} = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_m \\ \end{bmatrix}$ , by a scalar $x$ is written (in numerator layout notation) as
-  \begin{align*}
-    \frac{\partial \mathbf{y}}{\partial x} = \begin{bmatrix} \frac{\partial y_1}{\partial x}\\ \frac{\partial y_2}{\partial x}\\ \vdots\\ \frac{\partial y_m}{\partial x}\\ \end{bmatrix}.
-  \end{align*}
-In vector calculus the derivative of a vector $y$ with respect to a scalar $x$ is known as the tangent vector of the vector $y$, $\frac{\partial \mathbf{y}}{\partial x}$
+  \begin{enumerate}
+  \item The derivative of a vector $\mathbf{y} = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_m \\ \end{bmatrix}$ , by a scalar $x$ is written (in numerator layout notation) as
+    \begin{align*}
+      \frac{\partial \mathbf{y}}{\partial x} = \begin{bmatrix} \frac{\partial y_1}{\partial x}\\ \frac{\partial y_2}{\partial x}\\ \vdots\\ \frac{\partial y_m}{\partial x}\\ \end{bmatrix}.
+    \end{align*}
+    In vector calculus the derivative of a vector $y$ with respect to a scalar $x$ is known as the tangent vector of the vector $y$, $\frac{\partial \mathbf{y}}{\partial x}$
 
-\item \textbf{The derivative of a scalar $y$ by a vector} $\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \\ \end{bmatrix}$ , is written (in numerator layout notation) as
-  \begin{align*}
-    \frac{\partial y}{\partial \mathbf{x}} = \left[ \frac{\partial y}{\partial x_1} \ \ \frac{\partial y}{\partial x_2} \ \ \cdots \ \ \frac{\partial y}{\partial x_n} \right].
-  \end{align*}
+  \item \textbf{The derivative of a scalar $y$ by a vector} $\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \\ \end{bmatrix}$ , is written (in numerator layout notation) as
+    \begin{align*}
+      \frac{\partial y}{\partial \mathbf{x}} = \left[ \frac{\partial y}{\partial x_1} \ \ \frac{\partial y}{\partial x_2} \ \ \cdots \ \ \frac{\partial y}{\partial x_n} \right].
+    \end{align*}
 
-\item \textbf{The second order derivatives of a scalar $y$ by a vector} $\mathbf{x}
-  = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \\ \end{bmatrix}$ is written (in numerator layout notation) as
+  \item \textbf{The second order derivatives of a scalar $y$ by a vector} $\mathbf{x}
+    = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \\ \end{bmatrix}$ is written (in numerator layout notation) as
 
-  \begin{align*}
-    \frac{\partial^2 y}{\partial \mathbf{x}\partial \mathbf{x}'}&=\frac{\partial
-    }{\partial \mathbf{x}'}\left[\frac{\partial y}{\partial \mathbf{x}}\right]=\frac{\partial}{\partial \mathbf{x}'}\left[ \frac{\partial y}{\partial x_1} \ \ \frac{\partial y}{\partial x_2} \ \ \cdots \ \ \frac{\partial y}{\partial x_n} \right] \\&= \begin{bmatrix} \frac{\partial^2 y}{\partial x_1^2} & \frac{\partial^2 y}{\partial x_1\partial x_2} & \cdots & \frac{\partial^2 y}{\partial x_1\partial x_n}\\ \frac{\partial^2 y}{\partial x_2\partial x_1} & \frac{\partial^2 y}{\partial x_2^2} & \cdots & \frac{\partial^2 y}{\partial x_2\partial x_n}\\ \vdots & \vdots & \ddots & \vdots\\ \frac{\partial^2 y}{\partial x_m\partial x_1} & \frac{\partial^2 y}{\partial x_m\partial x_2} & \cdots & \frac{\partial^2 y}{\partial x_m\partial x_m}\\ \end{bmatrix}.
-  \end{align*}
+    \begin{align*}
+      \frac{\partial^2 y}{\partial \mathbf{x}\partial \mathbf{x}'}&=\frac{\partial
+                                                                    }{\partial \mathbf{x}'}\left[\frac{\partial y}{\partial \mathbf{x}}\right]=\frac{\partial}{\partial \mathbf{x}'}\left[ \frac{\partial y}{\partial x_1} \ \ \frac{\partial y}{\partial x_2} \ \ \cdots \ \ \frac{\partial y}{\partial x_n} \right] \\&= \begin{bmatrix} \frac{\partial^2 y}{\partial x_1^2} & \frac{\partial^2 y}{\partial x_1\partial x_2} & \cdots & \frac{\partial^2 y}{\partial x_1\partial x_n}\\ \frac{\partial^2 y}{\partial x_2\partial x_1} & \frac{\partial^2 y}{\partial x_2^2} & \cdots & \frac{\partial^2 y}{\partial x_2\partial x_n}\\ \vdots & \vdots & \ddots & \vdots\\ \frac{\partial^2 y}{\partial x_m\partial x_1} & \frac{\partial^2 y}{\partial x_m\partial x_2} & \cdots & \frac{\partial^2 y}{\partial x_m\partial x_m}\\ \end{bmatrix}.
+    \end{align*}
 
-\item The derivative of a vector function (a vector whose components are functions) $\mathbf{y} = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_m \\ \end{bmatrix}$ , with respect to an input vector, $\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \\ \end{bmatrix}$ , is written (in numerator layout notation) as
+  \item The derivative of a vector function (a vector whose components are functions) $\mathbf{y} = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_m \\ \end{bmatrix}$ , with respect to an input vector, $\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \\ \end{bmatrix}$ , is written (in numerator layout notation) as
 
-  \begin{align*}
-    \frac{\partial \mathbf{y}}{\partial \mathbf{x}} = \begin{bmatrix} \frac{\partial y_1}{\partial x_1} & \frac{\partial y_1}{\partial x_2} & \cdots & \frac{\partial y_1}{\partial x_n}\\ \frac{\partial y_2}{\partial x_1} & \frac{\partial y_2}{\partial x_2} & \cdots & \frac{\partial y_2}{\partial x_n}\\ \vdots & \vdots & \ddots & \vdots\\ \frac{\partial y_m}{\partial x_1} & \frac{\partial y_m}{\partial x_2} & \cdots & \frac{\partial y_m}{\partial x_n}\\ \end{bmatrix}.
-  \end{align*}
+    \begin{align*}
+      \frac{\partial \mathbf{y}}{\partial \mathbf{x}} = \begin{bmatrix} \frac{\partial y_1}{\partial x_1} & \frac{\partial y_1}{\partial x_2} & \cdots & \frac{\partial y_1}{\partial x_n}\\ \frac{\partial y_2}{\partial x_1} & \frac{\partial y_2}{\partial x_2} & \cdots & \frac{\partial y_2}{\partial x_n}\\ \vdots & \vdots & \ddots & \vdots\\ \frac{\partial y_m}{\partial x_1} & \frac{\partial y_m}{\partial x_2} & \cdots & \frac{\partial y_m}{\partial x_n}\\ \end{bmatrix}.
+    \end{align*}
 
-\item The derivative of a matrix function $Y$ by a scalar $x$ is known as the tangent
-  matrix and is given (in numerator layout notation) by
-  \begin{align*}
-    \frac{\partial \mathbf{Y}}{\partial x} = \begin{bmatrix} \frac{\partial y_{11}}{\partial x} & \frac{\partial y_{12}}{\partial x} & \cdots & \frac{\partial y_{1n}}{\partial x}\\ \frac{\partial y_{21}}{\partial x} & \frac{\partial y_{22}}{\partial x} & \cdots & \frac{\partial y_{2n}}{\partial x}\\ \vdots & \vdots & \ddots & \vdots\\ \frac{\partial y_{m1}}{\partial x} & \frac{\partial y_{m2}}{\partial x} & \cdots & \frac{\partial y_{mn}}{\partial x}\\ \end{bmatrix}.
-  \end{align*}
+  \item The derivative of a matrix function $Y$ by a scalar $x$ is known as the tangent
+    matrix and is given (in numerator layout notation) by
+    \begin{align*}
+      \frac{\partial \mathbf{Y}}{\partial x} = \begin{bmatrix} \frac{\partial y_{11}}{\partial x} & \frac{\partial y_{12}}{\partial x} & \cdots & \frac{\partial y_{1n}}{\partial x}\\ \frac{\partial y_{21}}{\partial x} & \frac{\partial y_{22}}{\partial x} & \cdots & \frac{\partial y_{2n}}{\partial x}\\ \vdots & \vdots & \ddots & \vdots\\ \frac{\partial y_{m1}}{\partial x} & \frac{\partial y_{m2}}{\partial x} & \cdots & \frac{\partial y_{mn}}{\partial x}\\ \end{bmatrix}.
+    \end{align*}
 
-\item The derivative of a scalar $y$ function of a matrix $X$ of independent variables, with respect to the matrix $X$, is given (in numerator layout notation) by
+  \item The derivative of a scalar $y$ function of a matrix $X$ of independent variables, with respect to the matrix $X$, is given (in numerator layout notation) by
 
-  \begin{align*}
-    \frac{\partial y}{\partial \mathbf{X}} = \begin{bmatrix} \frac{\partial y}{\partial x_{11}} & \frac{\partial y}{\partial x_{21}} & \cdots & \frac{\partial y}{\partial x_{p1}}\\ \frac{\partial y}{\partial x_{12}} & \frac{\partial y}{\partial x_{22}} & \cdots & \frac{\partial y}{\partial x_{p2}}\\ \vdots & \vdots & \ddots & \vdots\\ \frac{\partial y}{\partial x_{1q}} & \frac{\partial y}{\partial x_{2q}} & \cdots & \frac{\partial y}{\partial x_{pq}}\\ \end{bmatrix}.
-  \end{align*}
+    \begin{align*}
+      \frac{\partial y}{\partial \mathbf{X}} = \begin{bmatrix} \frac{\partial y}{\partial x_{11}} & \frac{\partial y}{\partial x_{21}} & \cdots & \frac{\partial y}{\partial x_{p1}}\\ \frac{\partial y}{\partial x_{12}} & \frac{\partial y}{\partial x_{22}} & \cdots & \frac{\partial y}{\partial x_{p2}}\\ \vdots & \vdots & \ddots & \vdots\\ \frac{\partial y}{\partial x_{1q}} & \frac{\partial y}{\partial x_{2q}} & \cdots & \frac{\partial y}{\partial x_{pq}}\\ \end{bmatrix}.
+    \end{align*}
 
-\end{enumerate}
+  \end{enumerate}
 
-%\includegraphics[width=\textwidth]{Matrix-Derivatives.pdf}
+  % \includegraphics[width=\textwidth]{Matrix-Derivatives.pdf}
 
 \end{frame}
 
 
-                                                                                              \begin{frame}{Newton's algorithm for multidimensional optimization}
-                                                                                                We can now generalise the update step in Newton's method:
-                                                                                                \begin{equation}
-                                                                                                  x_{n+1}=x_n-\left(\frac{\partial^2 f({\bm x})}{\partial {\bm x}\partial{\bm x}'}\right)^{-1}
-                                                                                                  \frac{\partial f({\bm x})}{\partial {\bm x}}
-                                                                                                \end{equation}
+\begin{frame}{Newton's algorithm for multidimensional optimization}
+  We can now generalise the update step in Newton's method:
+  \begin{equation}
+    x_{n+1}=x_n-\left(\frac{\partial^2 f({\bm x})}{\partial {\bm x}\partial{\bm x}'}\right)^{-1}
+    \frac{\partial f({\bm x})}{\partial {\bm x}}
+  \end{equation}
 
-                                                                                                Now write code to minimise $y=x_1^2-x_1x_2+x_2^2+e^{x_2}$
-                                                                                              \end{frame}
+  Now write code to minimise $y=x_1^2-x_1x_2+x_2^2+e^{x_2}$
+\end{frame}
 
 \begin{frame}
-\frametitle{The linear regression model, a revisit}
-\begin{itemize}
-\item Consider the linear regression model with multiple covariates,
+  \frametitle{The linear regression model, a revisit}
+  \begin{itemize}
+  \item Consider the linear regression model with multiple covariates,
 
-  \begin{equation*}
-    y_i = \beta_0 + \beta_1x_1+...+\beta_p x_p + \epsilon_i
-  \end{equation*}
-where $\epsilon_i \sim N(0, \sigma^2)$
+    \begin{equation*}
+      y_i = \beta_0 + \beta_1x_1+...+\beta_p x_p + \epsilon_i
+    \end{equation*}
+    where $\epsilon_i \sim N(0, \sigma^2)$
 
-\item What is the gradient and Hessian matrix for the log likelihood ($\mathcal{L}$)
-  with respect to the parameter vector $\bm{\beta}=(\beta_0,...,\beta_p)$?
+  \item What is the gradient and Hessian matrix for the log likelihood ($\mathcal{L}$)
+    with respect to the parameter vector $\bm{\beta}=(\beta_0,...,\beta_p)$?
 
-  \begin{equation*}
-    \frac{\partial log \mathcal{L}}{\partial \bm{\beta}} = ?
-  \end{equation*}
+    \begin{equation*}
+      \frac{\partial log \mathcal{L}}{\partial \bm{\beta}} = ?
+    \end{equation*}
 
-  \begin{equation*}
-    \frac{\partial^2 log \mathcal{L}}{\partial \bm{\beta} \partial \bm{\beta}'}
-    = ?
-  \end{equation*}
+    \begin{equation*}
+      \frac{\partial^2 log \mathcal{L}}{\partial \bm{\beta} \partial \bm{\beta}'}
+      = ?
+    \end{equation*}
 
-\end{itemize}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -684,14 +690,14 @@ where $\epsilon_i \sim N(0, \sigma^2)$
     \item Neither $\beta$ nor $\sigma$ is known.
     \end{itemize}
 
-    \item Write down the likelihood function with respect to the
-      unknown parameters.
+  \item Write down the likelihood function with respect to the
+    unknown parameters.
 
-    \item Write down the gradient for the likelihood function.
+  \item Write down the gradient for the likelihood function.
 
-    \item Write down the Hessian for the likelihood function.
+  \item Write down the Hessian for the likelihood function.
 
-    \item Use Newton's method to obtain the best parameter estimate.
+  \item Use Newton's method to obtain the best parameter estimate.
 
   \end{itemize}
 
@@ -726,7 +732,7 @@ points(sort(x), yHat[order(x)], type = "l", col = "red", lwd = 2)
 
 
 \begin{frame}[fragile]
-\frametitle{Comparison with OLS}
+  \frametitle{Comparison with OLS}
 
 \begin{verbatim}
 myLM <- lm(y~x)
@@ -786,543 +792,619 @@ points(sort(x), yHatOLS[order(x)], type = "l",
   \end{itemize}
 \end{frame}
 
-                                                                                              \begin{frame}{A harder example}
-                                                                                                \begin{itemize}
-                                                                                                \item Use Newton's method to find the maximum likelihood estimate for the coefficients in a logistic regression. The steps are:
-                                                                                                  \begin{itemize}
-                                                                                                  \item Write down likelihood function
-                                                                                                  \item Find the gradient and Hessian matrix
-                                                                                                  \item Code these up in R
-                                                                                                  \item Simulate some data from a logistic regression model.
-                                                                                                  \item Test your code.
-                                                                                                  \end{itemize}
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \section{Quasi-Newton Methods}
-                                                                                              \begin{frame}{Quasi-Newton Methods}
-                                                                                                \begin{itemize}
-                                                                                                \item One of the most difficult parts of the Newton method is working out the derivatives especially the Hessian.
+\begin{frame}{A harder example}
+  \begin{itemize}
+  \item Use Newton's method to find the maximum likelihood estimate for the coefficients in a logistic regression. The steps are:
+    \begin{itemize}
+    \item Write down likelihood function
+    \item Find the gradient and Hessian matrix
+    \item Code these up in R
+    \item Simulate some data from a logistic regression model.
+    \item Test your code.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+\section{Quasi-Newton Methods}
+\begin{frame}{Quasi-Newton Methods}
+  \begin{itemize}
+  \item One of the most difficult parts of the Newton method is working out the derivatives especially the Hessian.
 
-                                                                                                \item However methods can be used to approximate the Hessian and also the gradient.
+  \item However methods can be used to approximate the Hessian and also the gradient.
 
-                                                                                                \item These are known as Quasi-Newton Methods
+  \item These are known as Quasi-Newton Methods
 
-                                                                                                \item In general they will converge slower than pure Newton methods.
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{The BFGS algorithm}
-                                                                                                \begin{itemize}
-                                                                                                \item The BFGS algorithm was introduced over several papers by Broyden, Fletcher, Goldfarb and Shanno.
+  \item In general they will converge slower than pure Newton methods.
+  \end{itemize}
+\end{frame}
+\begin{frame}{The BFGS algorithm}
+  \begin{itemize}
+  \item The BFGS algorithm was introduced over several papers by Broyden, Fletcher, Goldfarb and Shanno.
 
-                                                                                                \item It is the most popular Quasi-Newton algorithm.
+  \item It is the most popular Quasi-Newton algorithm.
 
-                                                                                                \item The R function `optim' also has a variation called L-BFGS-B.
-                                                                                                \item The L-BFGS-B uses less computer memory than BFGS and allows for box constraints
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Box Constraints}
-                                                                                                \begin{itemize}
-                                                                                                \item Box constraints have the form
+  \item The R function `optim' also has a variation called L-BFGS-B.
+  \item The L-BFGS-B uses less computer memory than BFGS and allows for box constraints
+  \end{itemize}
+\end{frame}
+\begin{frame}{Box Constraints}
+  \begin{itemize}
+  \item Box constraints have the form
 
-                                                                                                  \begin{equation}
-                                                                                                    l_i\leq x_i \leq u_i\quad\forall i
-                                                                                                  \end{equation}
+    \begin{equation}
+      l_i\leq x_i \leq u_i\quad\forall i
+    \end{equation}
 
-                                                                                                \item In statistics this can be very useful.  Often parameters are constrained
-                                                                                                  \begin{itemize}
-                                                                                                  \item Variance must be greater than 0
-                                                                                                  \item For a stationary AR(1), coefficient must be between -1 and 1
-                                                                                                  \item Weights in a portfolio must be between 0 and 1 if short selling is prohibited.
-                                                                                                  \end{itemize}
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Optim function in R}
-                                                                                                \begin{itemize}
-                                                                                                \item The optim function in R requires at least two inputs
-                                                                                                  \begin{itemize}
-                                                                                                  \item Initial values
-                                                                                                  \item The function that needs to be optimized
-                                                                                                  \end{itemize}
+  \item In statistics this can be very useful.  Often parameters are constrained
+    \begin{itemize}
+    \item Variance must be greater than 0
+    \item For a stationary AR(1), coefficient must be between -1 and 1
+    \item Weights in a portfolio must be between 0 and 1 if short selling is prohibited.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+\begin{frame}{Optim function in R}
+  \begin{itemize}
+  \item The optim function in R requires at least two inputs
+    \begin{itemize}
+    \item Initial values
+    \item The function that needs to be optimized
+    \end{itemize}
 
-                                                                                                \item By default it {\bf minimises} a function.
+  \item By default it {\bf minimises} a function.
 
-                                                                                                \item A function that computes the gradient vector can also be provided.
+  \item A function that computes the gradient vector can also be provided.
 
-                                                                                                \item The optimization method can be set (choices include BFGS, L-BFGS-B and Nelder-Mead)
+  \item The optimization method can be set (choices include BFGS, L-BFGS-B and Nelder-Mead)
 
-                                                                                                \item Lower and upper bounds can be set through the arguments {\em lower} and {\em upper} if the L-BFGS-B method is used.
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Optim function in R}
-                                                                                                \begin{itemize}
-                                                                                                \item Further arguments can be passed in an argument called {\em control}.
-                                                                                                \item Some things that can be included in this list are
-                                                                                                  \begin{itemize}
-                                                                                                  \item Maximum number of iterations ({\em maxit})
-                                                                                                  \item Information about the algorithm ({\em trace})
-                                                                                                  \item How often to display information about the algorithm ({\em REPORT})
-                                                                                                  \end{itemize}
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Optim function in R}
-                                                                                                \begin{itemize}
-                                                                                                \item The result of {\em optim} can be saved in an object that is a list containing
-                                                                                                  \begin{itemize}
-                                                                                                  \item The value of the  function at the turning point ({\em value})
-                                                                                                  \item The optimal parameters ({\em par})
-                                                                                                  \item Useful information about whether the algorithm has converged ({\em convergence})
-                                                                                                  \end{itemize}
-                                                                                                \item For all algorithms {\em convergence}=0 if the algorithm has converged (slightly confusing)
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Homework}
-                                                                                                Use {\em optim} to carry out maximum likelihood for the
-                                                                                                \begin{itemize}
-                                                                                                \item Logistic regression model
-                                                                                                  % \item Stationary AR(1) model
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \section{Derivative Free Methods}
-                                                                                              \subsection{Motivation}
-                                                                                              \begin{frame}{Discontinuous Functions}
-                                                                                                \begin{itemize}
-                                                                                                \item The {\em Newton Method} requires first and second derivatives.
+  \item Lower and upper bounds can be set through the arguments {\em lower} and {\em upper} if the L-BFGS-B method is used.
+  \end{itemize}
+\end{frame}
+\begin{frame}{Optim function in R}
+  \begin{itemize}
+  \item Further arguments can be passed in an argument called {\em control}.
+  \item Some things that can be included in this list are
+    \begin{itemize}
+    \item Maximum number of iterations ({\em maxit})
+    \item Information about the algorithm ({\em trace})
+    \item How often to display information about the algorithm ({\em REPORT})
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+\begin{frame}{Optim function in R}
+  \begin{itemize}
+  \item The result of {\em optim} can be saved in an object that is a list containing
+    \begin{itemize}
+    \item The value of the  function at the turning point ({\em value})
+    \item The optimal parameters ({\em par})
+    \item Useful information about whether the algorithm has converged ({\em convergence})
+    \end{itemize}
+  \item For all algorithms {\em convergence}=0 if the algorithm has converged (slightly confusing)
+  \end{itemize}
+\end{frame}
+\begin{frame}{Homework}
+  Use {\em optim} to carry out maximum likelihood for the
+  \begin{itemize}
+  \item Logistic regression model
+    % \item Stationary AR(1) model
+  \end{itemize}
+\end{frame}
 
-                                                                                                \item If derivatives are not available the they can be approximated by {\em Quasi-Newton methods}
+\section{Gradient Descent Methods}
+\begin{frame}[allowframebreaks]{Gradient Descent}
 
-                                                                                                \item What if the derivatives do not exist?
 
-                                                                                                \item This may occur if there are {\bf discontinuities} in the function.
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Business Example}
-                                                                                                \begin{itemize}
-                                                                                                \item Suppose the aim is to optimize income of the business by selecting the number of workers.
+  \begin{itemize}
+  \item Gradient descent is a \textbf{first-order} iterative optimization algorithm for finding the minimum of a function.
+  \item To find a \textbf{local minimum} of a function using gradient descent, one takes steps proportional to the negative of the gradient (or approximate gradient) of the function at the current point.
+  \item If, instead, one takes steps proportional to the positive of the gradient, one
+    approaches a local maximum of that function; the procedure is then known as gradient
+    ascent.
+  \item Gradient descent is based on the observation that if the multi-variable function
+    $F(\mathbf {x} )$ is defined and differentiable in $a$
+    neighborhood of a point $\mathbf {a}$  , then
+      $F(\mathbf {x} )$decreases \textbf{fastest} if one goes from
+      $\mathbf {a}$ in the direction of the negative gradient of
+      $F$ at $\mathbf {a}$ ,$-\nabla F(\mathbf {a} )$.
+    \item It follows that, if $\mathbf {a} _{n+1}=\mathbf {a} _{n}-\gamma \nabla F(\mathbf {a} _{n})$
+      for $ \gamma \in \mathbb {R} _{+}$  small enough, then $ F(\mathbf {a_{n}} )\geq F(\mathbf {a_{n+1}} )$.
 
-                                                                                                \item In the beginning adding more workers leads to more income for the business.
 
-                                                                                                \item If too many workers are employed, they may be less efficient and the income of the company goes down
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Business Example}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics[height=7cm]{RCode/contfunc.pdf}
-                                                                                                \end{center}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Business Example}
-                                                                                                \begin{itemize}
-                                                                                                \item Now suppose that there is a tax that the company must pay.
+      \begin{figure}
+        \centering
+        \includegraphics[height=0.4\textheight]{Gradient_descent}
+      \end{figure}
+    \item  Gradient descent is relatively slow close to the minimum.
+    \item  Conversely, using a fixed small $ \gamma $  can yield poor convergence.
+  \end{itemize}
 
-                                                                                                \item Companies with less than 50 workers do not pay the tax
+\end{frame}
 
-                                                                                                \item Companies with more than 50 workers do pay the tax
 
-                                                                                                \item How does this change the problem?
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Business Example}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics[height=7cm]{RCode/discontfunc.pdf}
-                                                                                                \end{center}
-                                                                                              \end{frame}
-                                                                                              \subsection{Nelder Mead Algorithm}
-                                                                                              \begin{frame}{The Nelder Mead Algorithm}
-                                                                                                \begin{itemize}
-                                                                                                \item The Nelder Mead algorithm is robust even when the functions are discontinuous.
+\begin{frame}[allowframebreaks]{Stochastic Gradient Descent}
+  \begin{itemize}
+  \item Stochastic gradient descent (often abbreviated SGD) is an iterative method for
+    optimizing an objective function with suitable smoothness properties
+    (e.g. differentiable or subdifferentiable).
+  \item It is called stochastic because the method uses randomly selected (or shuffled)
+    samples to evaluate the gradients, hence SGD can be regarded as a stochastic
+    approximation of gradient descent optimization.
 
-                                                                                                \item The idea is based on evaluating the function at the vertices of an {\em $n$-dimensional simplex} where $n$ is the number of input variables into the function.
+  \item When used to minimize the function $F(x)$, a standard (or "\textbf{batch}") gradient
+    descent method would perform the following iterations :
 
-                                                                                                \item For two dimensional problems the {\em $n$-dimensional simplex} is simply a triangle, and each corner is one vertex
+    \begin{align*}
+    w:=w-\eta \nabla Q(w)=w-\eta \sum _{i=1}^{n}\nabla Q_{i}(w)/n
+    \end{align*}
+    where $\eta$  is a step size (sometimes called the \textbf{learning rate} in machine learning).
+  \item In many cases, the summand functions have a simple form that enables inexpensive
+    evaluations of the sum-function and the sum gradient.
+  \item Stochastic gradient descent is a popular algorithm for training a wide range of models in machine learning.
 
-                                                                                                \item In general there are $n+1$ vertices.
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{A 2-dimensional simplex}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics[height=7cm]{RCode/nm0.pdf}
-                                                                                                \end{center}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Step 1: Evaluate Function}
-                                                                                                \begin{itemize}
-                                                                                                \item For each vertex ${\bm x_j}$ evaluate the function $f({\bm x_j})$
+  \item \textbf{Averaged stochastic gradient descent}, is ordinary stochastic gradient descent that
+    records an average of its parameter vector over time. That is, the update is the same
+    as for ordinary stochastic gradient descent, but the algorithm also keeps track of
 
-                                                                                                \item Order the vertices so that
-                                                                                                  \begin{equation}
-                                                                                                    f({\bm x_1})\leq f({\bm x_2})\leq\ldots\leq f({\bm x_{n+1}})
-                                                                                                  \end{equation}
+    \begin{align*}
+    {\bar {w}}={\frac {1}{t}}\sum _{i=0}^{t-1}w_{i}.
+    \end{align*}
+    When optimization is done, this averaged parameter vector takes the place of w.
+\newpage
+  \item\textbf{ Further Readings:}
 
-                                                                                                \item Suppose that the aim is to {\bf minimize} the function, then $f({\bm x_{n+1}})$ is the worst point.
+    \begin{itemize}
+    \item \textbf{AdaGrad}: Duchi, John; Hazan, Elad; Singer, Yoram (2011). "Adaptive subgradient
+      methods for online learning and stochastic optimization" (PDF). JMLR. 12: 2121–2159.
+    \item \textbf{Adam} \textbf{AdaMax}: Diederik P. Kingma, Jimmy Ba. "Adam: A Method for Stochastic
+      Optimization", ICLR 2015. arXiv:1412.6980
 
-                                                                                                \item The aim is to replace $f({\bm x_{n+1}})$ with a  better point
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{A 2-dimensional simplex}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics[height=7cm]{RCode/nmf.pdf}
-                                                                                                \end{center}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Step 2: Find Centroid}
-                                                                                                \begin{itemize}
-                                                                                                \item After eliminating the worst point ${\bm x_{n+1}}$, compute the {\bf centroid} of the remaining $n$ points
+    \end{itemize}
 
-                                                                                                  \begin{equation}
-                                                                                                    {\bm x_0}=\frac{1}{n}\sum_{j=1}^{n}  {\bm x_j}
-                                                                                                  \end{equation}
+  \end{itemize}
 
-                                                                                                \item For the 2-dimensional example the centroid will be in the middle of a line.
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Find Centroid}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics[height=7cm]{RCode/nmcent.pdf}
-                                                                                                \end{center}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Step 3: Find reflected point}
-                                                                                                \begin{itemize}
-                                                                                                \item Reflect the worst point around the centroid to get the {\bf reflected point}.
+\end{frame}
 
-                                                                                                \item The formula is:
-                                                                                                  \begin{equation}
-                                                                                                    {\bm x_r}={\bm x_0}+\alpha({\bm x_0}-{\bm x_{n+1}})
-                                                                                                  \end{equation}
 
-                                                                                                \item A common choice is $\alpha=1$.
+\section{Derivative Free Methods}
+\subsection{Motivation}
+\begin{frame}{Discontinuous Functions}
+  \begin{itemize}
+  \item The {\em Newton Method} requires first and second derivatives.
 
-                                                                                                \item In this case the reflected point is the same distance from the centroid as the worst point.
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Find Reflected point}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics[height=7cm]{RCode/nmrefl.pdf}
-                                                                                                \end{center}
-                                                                                              \end{frame}
+  \item If derivatives are not available the they can be approximated by {\em Quasi-Newton methods}
 
-                                                                                              \begin{frame}{Find Reflected point}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics[height=7cm]{RCode/nmrefl1.pdf}
-                                                                                                \end{center}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Three cases}
-                                                                                                \begin{enumerate}
-                                                                                                \item $f({\bm x_1})\leq f({\bm x_r})<f({\bm x_n})$
-                                                                                                  \begin{itemize}
-                                                                                                  \item ${\bm x_r}$ is neither best nor worst point
-                                                                                                  \end{itemize}
+  \item What if the derivatives do not exist?
 
-                                                                                                \item $f({\bm x_r})<f({\bm x_1})$
-                                                                                                  \begin{itemize}
-                                                                                                  \item ${\bm x_r}$ is the best point
-                                                                                                  \end{itemize}
+  \item This may occur if there are {\bf discontinuities} in the function.
+  \end{itemize}
+\end{frame}
+\begin{frame}{Business Example}
+  \begin{itemize}
+  \item Suppose the aim is to optimize income of the business by selecting the number of workers.
 
-                                                                                                \item $f({\bm x_r})\geq f({\bm x_n})$
-                                                                                                  \begin{itemize}
-                                                                                                  \item ${\bm x_r}$ is the worst point
-                                                                                                  \end{itemize}
-                                                                                                \end{enumerate}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Case 1}
-                                                                                                In Case 1 a new simplex is formed with ${\bm x_{n+1}}$ replaced by the reflected point ${\bm x_{r}}$.  Then go back to step 1.
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Case 1}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics[height=7cm]{RCode/nmrefl2.pdf}
-                                                                                                \end{center}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Case 1}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics[height=7cm]{RCode/nmrefl3.pdf}
-                                                                                                \end{center}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Case 2}
-                                                                                                In Case 2, ${\bm x_r}<{\bm x_1}$. A good direction has been found so we {\bf expand} along that direction
+  \item In the beginning adding more workers leads to more income for the business.
 
-                                                                                                \begin{equation}
-                                                                                                  {\bm x_e}={\bm x_0}+\gamma({\bm x_r}-{\bm x_0})
-                                                                                                \end{equation}
+  \item If too many workers are employed, they may be less efficient and the income of the company goes down
+  \end{itemize}
+\end{frame}
+\begin{frame}{Business Example}
+  \begin{center}
+    \includegraphics[height=7cm]{RCode/contfunc.pdf}
+  \end{center}
+\end{frame}
+\begin{frame}{Business Example}
+  \begin{itemize}
+  \item Now suppose that there is a tax that the company must pay.
 
-                                                                                                A common choice is $\gamma=2$
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Case 2}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics[height=7cm]{RCode/nmexpansion1.pdf}
-                                                                                                \end{center}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Case 2}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics[height=7cm]{RCode/nmexpansion2.pdf}
-                                                                                                \end{center}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Choosing the expansion point}
-                                                                                                \begin{itemize}
-                                                                                                \item Evaluate $f({\bm x_e})$.
+  \item Companies with less than 50 workers do not pay the tax
 
-                                                                                                \item If $f({\bm x_e})<f({\bm x_r})$:
-                                                                                                  \begin{itemize}
-                                                                                                  \item The expansion point is better than the reflection point. Form a new simplex with the expansion point
-                                                                                                  \end{itemize}
+  \item Companies with more than 50 workers do pay the tax
 
-                                                                                                \item If $f({\bm x_r})\leq f({\bm x_e})$:
-                                                                                                  \begin{itemize}
-                                                                                                  \item The expansion point is not better than the reflection point. Form a new simplex with the reflection point.
-                                                                                                  \end{itemize}
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Keep expansion point}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics[height=7cm]{RCode/nmexpansion3.pdf}
-                                                                                                \end{center}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Keep reflection point}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics[height=7cm]{RCode/nmexpansion4.pdf}
-                                                                                                \end{center}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Case 3}
-                                                                                                Case 3 implies that there may be a valley between ${\bm x_{n+1}}$ and ${\bm x_{r}}$ so find the {\bf contracted} point.  A new simplex is formed with the contraction point if it is better than ${\bm x_{n+1}}$
+  \item How does this change the problem?
+  \end{itemize}
+\end{frame}
+\begin{frame}{Business Example}
+  \begin{center}
+    \includegraphics[height=7cm]{RCode/discontfunc.pdf}
+  \end{center}
+\end{frame}
+\subsection{Nelder Mead Algorithm}
+\begin{frame}{The Nelder Mead Algorithm}
+  \begin{itemize}
+  \item The Nelder Mead algorithm is robust even when the functions are discontinuous.
 
-                                                                                                \begin{equation}
-                                                                                                  {\bm x_c}={\bm x_0}+\rho({\bm x_{n+1}}-{\bm x_0})
-                                                                                                \end{equation}
+  \item The idea is based on evaluating the function at the vertices of an {\em $n$-dimensional simplex} where $n$ is the number of input variables into the function.
 
-                                                                                                A common choice is $\rho=0.5$
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Case 3}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics[height=7cm]{RCode/nmcontraction1.pdf}
-                                                                                                \end{center}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{`Valley'}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics{valley.jpeg}
-                                                                                                \end{center}
-                                                                                              \end{frame}
+  \item For two dimensional problems the {\em $n$-dimensional simplex} is simply a triangle, and each corner is one vertex
 
-                                                                                              \begin{frame}{Find Contraction point}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics[height=7cm]{RCode/nmcontraction2.pdf}
-                                                                                                \end{center}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{New Simplex}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics[height=7cm]{RCode/nmcontraction3.pdf}
-                                                                                                \end{center}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Shrink}
-                                                                                                If $f({\bm x_{n+1}})\leq f({\bm x_{c}})$ then contracting away from the worst point does not lead to a better point.  In this case the function is too irregular a smaller simplex should be used.  Shrink the simplex
+  \item In general there are $n+1$ vertices.
+  \end{itemize}
+\end{frame}
+\begin{frame}{A 2-dimensional simplex}
+  \begin{center}
+    \includegraphics[height=7cm]{RCode/nm0.pdf}
+  \end{center}
+\end{frame}
+\begin{frame}{Step 1: Evaluate Function}
+  \begin{itemize}
+  \item For each vertex ${\bm x_j}$ evaluate the function $f({\bm x_j})$
 
-                                                                                                \begin{equation}
-                                                                                                  {\bm x_i}={\bm x_1}+\sigma({\bm x_i}-{\bm x_1})
-                                                                                                \end{equation}
-                                                                                                A popular choice is $\sigma=0.5$
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{`Egg Carton'}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics{eggcarton.jpeg}
-                                                                                                \end{center}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Contraction Point is worst}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics[height=7cm]{RCode/nmshrink1.pdf}
-                                                                                                \end{center}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{New Simplex}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics[height=7cm]{RCode/nmshrink2.pdf}
-                                                                                                \end{center}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Summary}
-                                                                                                \begin{itemize}
-                                                                                                \item Order points
-                                                                                                \item Find centroid
-                                                                                                \item Find reflected point
-                                                                                                \item Three cases:
-                                                                                                  \begin{enumerate}
-                                                                                                  \item Case 1 ($f({\bm x_1})\leq f({\bm x_r})<f({\bm x_n})$): Keep ${\bm x_r}$
-                                                                                                  \item Case 2 ($f({\bm x_r}) < f({\bm x_1})$): Find ${\bm x_e}$.
-                                                                                                    \begin{itemize}
-                                                                                                    \item If $f({\bm x_e})<f({\bm x_r})$ then keep $f({\bm x_e})$
-                                                                                                    \item Otherwise keep $f({\bm x_r})$
-                                                                                                    \end{itemize}
-                                                                                                  \item Case 3 ($f({\bm x_r})\geq f({\bm x_n})$): Find $f({\bm x_c})$
-                                                                                                    \begin{itemize}
-                                                                                                    \item If $f({\bm x_c})<f({\bm x_{n+1}})$ then keep $f({\bm x_{c}})$
-                                                                                                    \item Otherwise Shrink
-                                                                                                    \end{itemize}
-                                                                                                  \end{enumerate}
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \subsection{Coding Nelder Mead}
-                                                                                              \begin{frame}{Your task}
-                                                                                                \begin{itemize}
-                                                                                                \item Find the minimum of the function $f({\bm x})=x_1^2+x_2^2$
+  \item Order the vertices so that
+    \begin{equation}
+      f({\bm x_1})\leq f({\bm x_2})\leq\ldots\leq f({\bm x_{n+1}})
+    \end{equation}
 
-                                                                                                \item Use a triangle with vertices $(1,1)$, $(1,2)$, $(2,2)$ as the starting simplex
+  \item Suppose that the aim is to {\bf minimize} the function, then $f({\bm x_{n+1}})$ is the worst point.
 
-                                                                                                \item Don't worry about using a loop just yet.  Try to get code that just does the first iteration.
+  \item The aim is to replace $f({\bm x_{n+1}})$ with a  better point
+  \end{itemize}
+\end{frame}
+\begin{frame}{A 2-dimensional simplex}
+  \begin{center}
+    \includegraphics[height=7cm]{RCode/nmf.pdf}
+  \end{center}
+\end{frame}
+\begin{frame}{Step 2: Find Centroid}
+  \begin{itemize}
+  \item After eliminating the worst point ${\bm x_{n+1}}$, compute the {\bf centroid} of the remaining $n$ points
 
-                                                                                                \item Don't worry about the stopping rule yet either
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Use pseudo-code}
-                                                                                                \begin{algorithm}[H]
-                                                                                                  \begin{algorithmic}[1]
-                                                                                                    \STATE {\bf Set} initial simplex and evaluate function
-                                                                                                    \STATE Sort $f({\bm x_1})\leq\ldots\leq f({\bm x_n}) $
-                                                                                                    \STATE Compute {\bf reflected} point
-                                                                                                    \IF {$f({\bm x_1})\leq f({\bm x_r})<f({\bm x_n})$}
-                                                                                                    \RETURN ${\bm x_{n+1}}\gets{\bm x_{r}}$
-                                                                                                    \ELSIF{$f({\bm x_r})< f({\bm x_1})$}
-                                                                                                    \STATE Compute {\bf expanded} point
-                                                                                                    \IF{$f({\bm x_e})< f({\bm x_r})$}
-                                                                                                    \RETURN ${\bm x_{n+1}}\gets{\bm x_{e}}$
-                                                                                                    \ELSIF{$f({\bm x_r})\leq f({\bm x_e})$}
-                                                                                                    \RETURN ${\bm x_{n+1}}\gets{\bm x_{r}}$
-                                                                                                    \ENDIF
-                                                                                                    \ELSIF{$f({\bm x_n})\leq f({\bm x_r})$}
-                                                                                                    \STATE Compute {\bf contracted} point
-                                                                                                    \ENDIF
-                                                                                                    \caption{Nelder Mead}
-                                                                                                  \end{algorithmic}
-                                                                                                \end{algorithm}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Lessons}
-                                                                                                \begin{itemize}
-                                                                                                \item Break down a difficult problem into smaller problems.
+    \begin{equation}
+      {\bm x_0}=\frac{1}{n}\sum_{j=1}^{n}  {\bm x_j}
+    \end{equation}
 
-                                                                                                \item Use pseudo code in planning
+  \item For the 2-dimensional example the centroid will be in the middle of a line.
+  \end{itemize}
+\end{frame}
+\begin{frame}{Find Centroid}
+  \begin{center}
+    \includegraphics[height=7cm]{RCode/nmcent.pdf}
+  \end{center}
+\end{frame}
+\begin{frame}{Step 3: Find reflected point}
+  \begin{itemize}
+  \item Reflect the worst point around the centroid to get the {\bf reflected point}.
 
-                                                                                                \item Use comments
+  \item The formula is:
+    \begin{equation}
+      {\bm x_r}={\bm x_0}+\alpha({\bm x_0}-{\bm x_{n+1}})
+    \end{equation}
 
-                                                                                                \item Use indents
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Stopping Rule for Nelder Mead}
-                                                                                                \begin{itemize}
-                                                                                                \item As Nelder Mead gets close to (or reaches) the minimum, the simplex gets smaller and smaller.
+  \item A common choice is $\alpha=1$.
 
-                                                                                                \item One way to know that Nelder Mead has converged is by looking at the volume of the simplex.
+  \item In this case the reflected point is the same distance from the centroid as the worst point.
+  \end{itemize}
+\end{frame}
+\begin{frame}{Find Reflected point}
+  \begin{center}
+    \includegraphics[height=7cm]{RCode/nmrefl.pdf}
+  \end{center}
+\end{frame}
 
-                                                                                                \item To work out the volume requires some understanding between the relationship between matrix algebra and geometry.
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Stopping Rule for Nelder Mead}
-                                                                                                \begin{itemize}
-                                                                                                \item Choose the vertex ${\bm x_{n+1}}$ (although choosing any other vertex will also work)
-                                                                                                \item Build the matrix
-                                                                                                  $\tilde{X}=\left({\bm x_1}-{\bm x_{n+1}},{\bm x_2-{\bm x_{n+1}}},\ldots, {\bm x_{n}-{\bm x_{n+1}}}\right)$
-                                                                                                \item The volume of the simplex is $\frac{1}{2}|det(\tilde{X})|$
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Why?}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics[height=7cm]{RCode/geom1.pdf}
-                                                                                                \end{center}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Translate}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics[height=7cm]{RCode/geom2.pdf}
-                                                                                                \end{center}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Determinant=Area of Trapezoid}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics[height=7cm]{RCode/geom3.pdf}
-                                                                                                \end{center}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Triangle=Half Trapezoid}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics[height=7cm]{RCode/geom4.pdf}
-                                                                                                \end{center}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Alternative formula}
-                                                                                                Some of you may have learnt the formula for the area of a triangle as:
-                                                                                                \begin{equation}
-                                                                                                  \frac{1}{2}\left|det\left(
-                                                                                                      \begin{array}{ccc}
-                                                                                                        {\bm x_1}& {\bm x_2}& {\bm x_3}\\
-                                                                                                        1 & 1 & 1
-                                                                                                      \end{array}
-                                                                                                    \right)\right|
-                                                                                                \end{equation}
-                                                                                                The two approaches are equivalent.
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Questions}
-                                                                                                \begin{itemize}
-                                                                                                \item In my code, where should I start the loop?\\
+\begin{frame}{Find Reflected point}
+  \begin{center}
+    \includegraphics[height=7cm]{RCode/nmrefl1.pdf}
+  \end{center}
+\end{frame}
+\begin{frame}{Three cases}
+  \begin{enumerate}
+  \item $f({\bm x_1})\leq f({\bm x_r})<f({\bm x_n})$
+    \begin{itemize}
+    \item ${\bm x_r}$ is neither best nor worst point
+    \end{itemize}
 
-                                                                                                \item Should it be a {\em for} loop or a {\em while} loop?
+  \item $f({\bm x_r})<f({\bm x_1})$
+    \begin{itemize}
+    \item ${\bm x_r}$ is the best point
+    \end{itemize}
 
-                                                                                                \item What should the loop look like?
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Visualizing Nelder Mead}
-                                                                                                \begin{center}
-                                                                                                  \includegraphics[height=7cm]{RCode/NM/out/out00}
-                                                                                                \end{center}
-                                                                                              \end{frame}
+  \item $f({\bm x_r})\geq f({\bm x_n})$
+    \begin{itemize}
+    \item ${\bm x_r}$ is the worst point
+    \end{itemize}
+  \end{enumerate}
+\end{frame}
+\begin{frame}{Case 1}
+  In Case 1 a new simplex is formed with ${\bm x_{n+1}}$ replaced by the reflected point ${\bm x_{r}}$.  Then go back to step 1.
+\end{frame}
+\begin{frame}{Case 1}
+  \begin{center}
+    \includegraphics[height=7cm]{RCode/nmrefl2.pdf}
+  \end{center}
+\end{frame}
+\begin{frame}{Case 1}
+  \begin{center}
+    \includegraphics[height=7cm]{RCode/nmrefl3.pdf}
+  \end{center}
+\end{frame}
+\begin{frame}{Case 2}
+  In Case 2, ${\bm x_r}<{\bm x_1}$. A good direction has been found so we {\bf expand} along that direction
 
-                                                                                              \subsection{Using Nelder Mead}
-                                                                                              \begin{frame}{Nelder Mead in `optim'}
-                                                                                                \begin{itemize}
-                                                                                                \item Nelder Mead is the {\bf default} algorithm in the R function {\em optim}
-                                                                                                \item It is generally slower than Newton and Quasi-Newton methods but is more stable for functions that are not smooth.
-                                                                                                \item Including the argument
-                                                                                                  control=list(trace, REPORT=1) will print out details about each step of the algorithm.
-                                                                                                \item Slight different terminology is used for example `expansion' is called `extension'
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Box constraints in Nelder Mead}
-                                                                                                \begin{itemize}
-                                                                                                \item It is not possible to impose box constraints in Nelder Mead.
+  \begin{equation}
+    {\bm x_e}={\bm x_0}+\gamma({\bm x_r}-{\bm x_0})
+  \end{equation}
 
-                                                                                                \item However it is possible to trick R.  How?
+  A common choice is $\gamma=2$
+\end{frame}
+\begin{frame}{Case 2}
+  \begin{center}
+    \includegraphics[height=7cm]{RCode/nmexpansion1.pdf}
+  \end{center}
+\end{frame}
+\begin{frame}{Case 2}
+  \begin{center}
+    \includegraphics[height=7cm]{RCode/nmexpansion2.pdf}
+  \end{center}
+\end{frame}
+\begin{frame}{Choosing the expansion point}
+  \begin{itemize}
+  \item Evaluate $f({\bm x_e})$.
 
-                                                                                                \item Suppose the problem is a minimization.  We can use an {\em if} statement to force the function to be extremely large outside the box.
+  \item If $f({\bm x_e})<f({\bm x_r})$:
+    \begin{itemize}
+    \item The expansion point is better than the reflection point. Form a new simplex with the expansion point
+    \end{itemize}
 
-                                                                                                \item This is not an option in BFGS since this induces a discontinuity in the function.
-                                                                                                \end{itemize}
-                                                                                              \end{frame}
-                                                                                              \begin{frame}{Some test functions}
-                                                                                                Use both Nelder Mead and L-BFGS-B to minimize the following
-                                                                                                \begin{itemize}
-                                                                                                \item Booth's Function:
-                                                                                                  \begin{equation*}
-                                                                                                    f({\bm x})=(x_1+2x_2-7)^2+(2x_1+x_2-5)^2
-                                                                                                    \quad-10\leq x_1,x_2\leq 10
-                                                                                                  \end{equation*}
-                                                                                                \item Bukin Function N.6
-                                                                                                  \begin{equation*}
-                                                                                                    f({\bm x})=100\sqrt{\left|x_2-\frac{x_1^2}{100}\right|}+\frac{|x_1+10|}{100}
-                                                                                                    \quad\begin{array}{c}
-                                                                                                           -15\leq x_1\leq 5\\
-                                                                                                           -3\leq x_2\leq 3
-                                                                                                         \end{array}
-                                                                                                       \end{equation*}
-                                                                                                     \end{itemize}
-                                                                                                   \end{frame}
-                                                                                                   \begin{frame}{Summary}
-                                                                                                     \begin{itemize}
-                                                                                                     \item This is the end of the optimization topic.
-                                                                                                     \item You should now be familiar with
-                                                                                                       \begin{itemize}
-                                                                                                       \item Newton's Method
-                                                                                                       \item Quasi Newton Method
-                                                                                                       \item Nelder Mead
-                                                                                                       \end{itemize}
-                                                                                                     \item Hopefully you also improved your coding skills!
-                                                                                                     \end{itemize}
-                                                                                                   \end{frame}
-                                                                                                   \begin{frame}{Summary}
-                                                                                                     \begin{itemize}
-                                                                                                     \item Some important lessons:
-                                                                                                       \begin{itemize}
-                                                                                                       \item If you can evaluate derivatives and Hessians then do so when implementing Newton and Quasi-Newton methods.
+  \item If $f({\bm x_r})\leq f({\bm x_e})$:
+    \begin{itemize}
+    \item The expansion point is not better than the reflection point. Form a new simplex with the reflection point.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+\begin{frame}{Keep expansion point}
+  \begin{center}
+    \includegraphics[height=7cm]{RCode/nmexpansion3.pdf}
+  \end{center}
+\end{frame}
+\begin{frame}{Keep reflection point}
+  \begin{center}
+    \includegraphics[height=7cm]{RCode/nmexpansion4.pdf}
+  \end{center}
+\end{frame}
+\begin{frame}{Case 3}
+  Case 3 implies that there may be a valley between ${\bm x_{n+1}}$ and ${\bm x_{r}}$ so find the {\bf contracted} point.  A new simplex is formed with the contraction point if it is better than ${\bm x_{n+1}}$
 
-                                                                                                       \item If there are discontinuities in the function then Nelder Mead may work better.
+  \begin{equation}
+    {\bm x_c}={\bm x_0}+\rho({\bm x_{n+1}}-{\bm x_0})
+  \end{equation}
 
-                                                                                                       \item In any case the best strategy is to optimize using {\bf more than one method} to check that results are robust.
+  A common choice is $\rho=0.5$
+\end{frame}
+\begin{frame}{Case 3}
+  \begin{center}
+    \includegraphics[height=7cm]{RCode/nmcontraction1.pdf}
+  \end{center}
+\end{frame}
+\begin{frame}{`Valley'}
+  \begin{center}
+    \includegraphics{valley.jpeg}
+  \end{center}
+\end{frame}
 
-                                                                                                       \item Also pay special attention to {\bf starting values}. A good strategy is to check that results are robust to a few different choices of starting values.
-                                                                                                       \end{itemize}
-                                                                                                     \end{itemize}
-                                                                                                   \end{frame}
-                                                                                                 \end{document}
+\begin{frame}{Find Contraction point}
+  \begin{center}
+    \includegraphics[height=7cm]{RCode/nmcontraction2.pdf}
+  \end{center}
+\end{frame}
+\begin{frame}{New Simplex}
+  \begin{center}
+    \includegraphics[height=7cm]{RCode/nmcontraction3.pdf}
+  \end{center}
+\end{frame}
+\begin{frame}{Shrink}
+  If $f({\bm x_{n+1}})\leq f({\bm x_{c}})$ then contracting away from the worst point does not lead to a better point.  In this case the function is too irregular a smaller simplex should be used.  Shrink the simplex
+
+  \begin{equation}
+    {\bm x_i}={\bm x_1}+\sigma({\bm x_i}-{\bm x_1})
+  \end{equation}
+  A popular choice is $\sigma=0.5$
+\end{frame}
+\begin{frame}{`Egg Carton'}
+  \begin{center}
+    \includegraphics{eggcarton.jpeg}
+  \end{center}
+\end{frame}
+\begin{frame}{Contraction Point is worst}
+  \begin{center}
+    \includegraphics[height=7cm]{RCode/nmshrink1.pdf}
+  \end{center}
+\end{frame}
+\begin{frame}{New Simplex}
+  \begin{center}
+    \includegraphics[height=7cm]{RCode/nmshrink2.pdf}
+  \end{center}
+\end{frame}
+\begin{frame}{Summary}
+  \begin{itemize}
+  \item Order points
+  \item Find centroid
+  \item Find reflected point
+  \item Three cases:
+    \begin{enumerate}
+    \item Case 1 ($f({\bm x_1})\leq f({\bm x_r})<f({\bm x_n})$): Keep ${\bm x_r}$
+    \item Case 2 ($f({\bm x_r}) < f({\bm x_1})$): Find ${\bm x_e}$.
+      \begin{itemize}
+      \item If $f({\bm x_e})<f({\bm x_r})$ then keep $f({\bm x_e})$
+      \item Otherwise keep $f({\bm x_r})$
+      \end{itemize}
+    \item Case 3 ($f({\bm x_r})\geq f({\bm x_n})$): Find $f({\bm x_c})$
+      \begin{itemize}
+      \item If $f({\bm x_c})<f({\bm x_{n+1}})$ then keep $f({\bm x_{c}})$
+      \item Otherwise Shrink
+      \end{itemize}
+    \end{enumerate}
+  \end{itemize}
+\end{frame}
+\subsection{Coding Nelder Mead}
+\begin{frame}{Your task}
+  \begin{itemize}
+  \item Find the minimum of the function $f({\bm x})=x_1^2+x_2^2$
+
+  \item Use a triangle with vertices $(1,1)$, $(1,2)$, $(2,2)$ as the starting simplex
+
+  \item Don't worry about using a loop just yet.  Try to get code that just does the first iteration.
+
+  \item Don't worry about the stopping rule yet either
+  \end{itemize}
+\end{frame}
+\begin{frame}{Use pseudo-code}
+  \begin{algorithm}[H]
+    \begin{algorithmic}[1]
+      \STATE {\bf Set} initial simplex and evaluate function
+      \STATE Sort $f({\bm x_1})\leq\ldots\leq f({\bm x_n}) $
+      \STATE Compute {\bf reflected} point
+      \IF {$f({\bm x_1})\leq f({\bm x_r})<f({\bm x_n})$}
+      \RETURN ${\bm x_{n+1}}\gets{\bm x_{r}}$
+      \ELSIF{$f({\bm x_r})< f({\bm x_1})$}
+      \STATE Compute {\bf expanded} point
+      \IF{$f({\bm x_e})< f({\bm x_r})$}
+      \RETURN ${\bm x_{n+1}}\gets{\bm x_{e}}$
+      \ELSIF{$f({\bm x_r})\leq f({\bm x_e})$}
+      \RETURN ${\bm x_{n+1}}\gets{\bm x_{r}}$
+      \ENDIF
+      \ELSIF{$f({\bm x_n})\leq f({\bm x_r})$}
+      \STATE Compute {\bf contracted} point
+      \ENDIF
+      \caption{Nelder Mead}
+    \end{algorithmic}
+  \end{algorithm}
+\end{frame}
+\begin{frame}{Lessons}
+  \begin{itemize}
+  \item Break down a difficult problem into smaller problems.
+
+  \item Use pseudo code in planning
+
+  \item Use comments
+
+  \item Use indents
+  \end{itemize}
+\end{frame}
+\begin{frame}{Stopping Rule for Nelder Mead}
+  \begin{itemize}
+  \item As Nelder Mead gets close to (or reaches) the minimum, the simplex gets smaller and smaller.
+
+  \item One way to know that Nelder Mead has converged is by looking at the volume of the simplex.
+
+  \item To work out the volume requires some understanding between the relationship between matrix algebra and geometry.
+  \end{itemize}
+\end{frame}
+\begin{frame}{Stopping Rule for Nelder Mead}
+  \begin{itemize}
+  \item Choose the vertex ${\bm x_{n+1}}$ (although choosing any other vertex will also work)
+  \item Build the matrix
+    $\tilde{X}=\left({\bm x_1}-{\bm x_{n+1}},{\bm x_2-{\bm x_{n+1}}},\ldots, {\bm x_{n}-{\bm x_{n+1}}}\right)$
+  \item The volume of the simplex is $\frac{1}{2}|det(\tilde{X})|$
+  \end{itemize}
+\end{frame}
+\begin{frame}{Why?}
+  \begin{center}
+    \includegraphics[height=7cm]{RCode/geom1.pdf}
+  \end{center}
+\end{frame}
+\begin{frame}{Translate}
+  \begin{center}
+    \includegraphics[height=7cm]{RCode/geom2.pdf}
+  \end{center}
+\end{frame}
+\begin{frame}{Determinant=Area of Trapezoid}
+  \begin{center}
+    \includegraphics[height=7cm]{RCode/geom3.pdf}
+  \end{center}
+\end{frame}
+\begin{frame}{Triangle=Half Trapezoid}
+  \begin{center}
+    \includegraphics[height=7cm]{RCode/geom4.pdf}
+  \end{center}
+\end{frame}
+\begin{frame}{Alternative formula}
+  Some of you may have learnt the formula for the area of a triangle as:
+  \begin{equation}
+    \frac{1}{2}\left|det\left(
+        \begin{array}{ccc}
+          {\bm x_1}& {\bm x_2}& {\bm x_3}\\
+          1 & 1 & 1
+        \end{array}
+      \right)\right|
+  \end{equation}
+  The two approaches are equivalent.
+\end{frame}
+\begin{frame}{Questions}
+  \begin{itemize}
+  \item In my code, where should I start the loop?\\
+
+  \item Should it be a {\em for} loop or a {\em while} loop?
+
+  \item What should the loop look like?
+  \end{itemize}
+\end{frame}
+\begin{frame}{Visualizing Nelder Mead}
+  \begin{center}
+    \includegraphics[height=7cm]{RCode/NM/out/out00}
+  \end{center}
+\end{frame}
+
+\subsection{Using Nelder Mead}
+\begin{frame}{Nelder Mead in `optim'}
+  \begin{itemize}
+  \item Nelder Mead is the {\bf default} algorithm in the R function {\em optim}
+  \item It is generally slower than Newton and Quasi-Newton methods but is more stable for functions that are not smooth.
+  \item Including the argument
+    control=list(trace, REPORT=1) will print out details about each step of the algorithm.
+  \item Slight different terminology is used for example `expansion' is called `extension'
+  \end{itemize}
+\end{frame}
+\begin{frame}{Box constraints in Nelder Mead}
+  \begin{itemize}
+  \item It is not possible to impose box constraints in Nelder Mead.
+
+  \item However it is possible to trick R.  How?
+
+  \item Suppose the problem is a minimization.  We can use an {\em if} statement to force the function to be extremely large outside the box.
+
+  \item This is not an option in BFGS since this induces a discontinuity in the function.
+  \end{itemize}
+\end{frame}
+\begin{frame}{Some test functions}
+  Use both Nelder Mead and L-BFGS-B to minimize the following
+  \begin{itemize}
+  \item Booth's Function:
+    \begin{equation*}
+      f({\bm x})=(x_1+2x_2-7)^2+(2x_1+x_2-5)^2
+      \quad-10\leq x_1,x_2\leq 10
+    \end{equation*}
+  \item Bukin Function N.6
+    \begin{equation*}
+      f({\bm x})=100\sqrt{\left|x_2-\frac{x_1^2}{100}\right|}+\frac{|x_1+10|}{100}
+      \quad\begin{array}{c}
+             -15\leq x_1\leq 5\\
+             -3\leq x_2\leq 3
+           \end{array}
+         \end{equation*}
+       \end{itemize}
+     \end{frame}
+     \begin{frame}{Summary}
+       \begin{itemize}
+       \item This is the end of the optimization topic.
+       \item You should now be familiar with
+         \begin{itemize}
+         \item Newton's Method
+         \item Quasi Newton Method
+         \item Nelder Mead
+         \end{itemize}
+       \item Hopefully you also improved your coding skills!
+       \end{itemize}
+     \end{frame}
+     \begin{frame}{Summary}
+       \begin{itemize}
+       \item Some important lessons:
+         \begin{itemize}
+         \item If you can evaluate derivatives and Hessians then do so when implementing Newton and Quasi-Newton methods.
+
+         \item If there are discontinuities in the function then Nelder Mead may work better.
+
+         \item In any case the best strategy is to optimize using {\bf more than one method} to check that results are robust.
+
+         \item Also pay special attention to {\bf starting values}. A good strategy is to check that results are robust to a few different choices of starting values.
+         \end{itemize}
+       \end{itemize}
+     \end{frame}
+   \end{document}
