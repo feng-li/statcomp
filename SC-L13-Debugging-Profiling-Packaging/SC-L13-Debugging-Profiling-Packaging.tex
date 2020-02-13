@@ -30,7 +30,7 @@
 %\setlength{\leftmargini}{5pt}
 
 
-\title[Statistical Computing]{{\textbf{Debugging and profiling in R}}}
+\title[Statistical Computing]{{\textbf{Debugging, profiling and packaging in R}}}
 
 \author[Feng Li]{\includegraphics[height=2cm]{cufelogo}\\
   \vspace{0.5cm}\textbf{Feng Li\\\texttt{feng.li@cufe.edu.cn}}}
@@ -218,11 +218,83 @@ summaryRprof("myprofile.out") # summarize the results
 
 \end{frame}
 
+\section{Packaging}
+\begin{frame}[allowframebreaks, fragile]
+  \frametitle{Package your code}
+  \begin{itemize}
+  \item Packages are the fundamental units of reproducible R code. They include reusable R
+    functions, the documentation that describes how to use them, and sample data.
+  \item Writing a package can seem overwhelming at first. So start with the basics and improve it over time.
+  \item It does not matter if your first version isn’t perfect as long as the next version
+    is better.
+
+    \newpage
+
+  \item Package components
+
+    \begin{itemize}
+    \item Code (\texttt{R/})
+    \item Package metadata (\texttt{DESCRIPTION})
+    \item Object documentation (\texttt{man/})
+
+      \begin{itemize}
+      \item I recommend \texttt{roxygen2} because it lets you write code and documentation
+        together while continuing to produce R’s standard documentation format.
+      \end{itemize}
+
+    \item Vignettes (\texttt{vignettes/})
+    \item Testing (\texttt{tests/})
+
+      \begin{itemize}
+      \item It is essential to write unit tests which define correct behaviour, and alert
+        you when functions break. Use the \texttt{testthat} package to convert the
+        informal interactive tests  to formal, automated tests.
+      \end{itemize}
+    \item Namespaces (\texttt{NAMESPACE})
+    \item Data (\texttt{data/})
+    \item Compiled code (\texttt{src/})
+    \item Installed files (\texttt{inst/})
+    \item Other components
+    \end{itemize}
+    \newpage
+  \item Automated checking
+
+    \begin{itemize}
+    \item An important part of the package development process is \texttt{R CMD
+        check}.\texttt{ R CMD check} is the name of the command you run from the
+      terminal. \texttt{ R CMD check} automatically checks your code for common problems.
+
+    \item I do not recommend calling it directly. Instead, run \texttt{devtools::check()}
+    with \texttt{devtools} package.
+
+    \end{itemize}
+    \newpage
+  \item Publish your package
+
+    \begin{itemize}
+    \item If you are serious about software development, you need to learn about Git. Git
+      is a version control system, a tool that tracks changes to your code and shares
+      those changes with others.
+
+    \item Publishing you package to GitHub makes sharing your package easy. Any R user can
+      install your package with just two lines of code:
+
+\begin{verbatim*}
+install.packages("devtools")
+devtools::install_github("username/packagename")
+\end{verbatim*}
+    \end{itemize}
+
+    \item If your package is stable enough, you could then send it to CRAN
+  \end{itemize}
+\end{frame}
+
 \begin{frame}
   \frametitle{Suggested Reading}
 
   \begin{itemize}
   \item Jones (2009), \textbf{Chapter 3.7, 5.6, 8.3, 9.3, 9.5}
+  \item Hadley Wickham (2015), R packages \url{http://r-pkgs.had.co.nz/}
 
 
   % \emph{Monte Carlo Statistical Methods} Book by Christian P Robert and George
