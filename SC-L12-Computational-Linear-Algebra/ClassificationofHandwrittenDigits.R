@@ -16,7 +16,7 @@ dtest <- read.table("dtest.dat")
 
 ## Display the image
 i <- 120
-image(matrix(azip[ , i], ncol = 16)[ , 1:16], col = gray(255:0/255))
+image(matrix(azip[ , i], ncol = 16)[ , 16:1], col = gray(255:0/255))
 
 ###----------------------------------------------------------------------------
 ### The naive method
@@ -152,7 +152,6 @@ for(b in basis.max)
     nCorrectOut[b] <- nCorrect
     print(b)
   }
-
 
 ###----------------------------------------------------------------------------
 ### Regression with QR,  SVD

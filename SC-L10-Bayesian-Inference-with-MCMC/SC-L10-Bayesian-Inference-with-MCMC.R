@@ -19,7 +19,6 @@ y <- X%*%beta + epsilon
 ###----------------------------------------------
 
 library(mvtnorm)
-
 LogPosterior <- function(beta, sigma2, y, X)
     {
         p <- length(beta)
@@ -102,7 +101,7 @@ for(i in 2:nIter)
     beta[i, ] <- beta.current
 
 
-    ## The Metropolis Algorithm For sigma2
+    ## The Metropolis Algorithm For sigma2, Check: is this right?
     sigma2.prop <- rgamma(1, 1) # FV
     logPosterior.sigma2.prop <- LogPosterior(
         beta = matrix(beta.current),
@@ -128,6 +127,8 @@ for(i in 2:nIter)
     ## Update the matrix
     acc[i, 2] <- acc.prob.sigma2
     sigma2[i, ] <- sigma2.current
+
+    if ((i %% 100) == 0) cat(i, " of ", nIter, "iterations done!\n")
 }
 
 ## Summarize beta and sigma2
@@ -138,4 +139,4 @@ mean(sigma2)
 sd(sigma2)
 
 Rprof(NULL)
-summaryRprof()
+print(summaryRprof())
