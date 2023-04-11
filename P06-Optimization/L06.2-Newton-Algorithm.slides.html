@@ -15113,7 +15113,7 @@ $$x_{n+1}=x_n-\left(\frac{\partial^2 f({\mathbf x})}{\partial {\mathbf x}\partia
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=c182f7b3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=723dc0c7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15121,7 +15121,7 @@ $$x_{n+1}=x_n-\left(\frac{\partial^2 f({\mathbf x})}{\partial {\mathbf x}\partia
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="The-linear-regression-model,-a-revisit">The linear regression model, a revisit<a class="anchor-link" href="#The-linear-regression-model,-a-revisit">&#182;</a></h2><ul>
 <li><p>Consider the linear regression model with multiple covariates,</p>
-$$y_i = \beta_0 + \beta_1x_1+...+\beta_p x_p + \epsilon_i$$<p>where
+$$y_i = \beta_0 + \beta_1x_{1i}+...+\beta_p x_{pi} + \epsilon_i$$<p>where
 $\epsilon_i \sim N(0, \sigma^2)$</p>
 </li>
 <li><p>What is the (log) likelihood function?</p>
@@ -15142,7 +15142,7 @@ $\epsilon_i \sim N(0, \sigma^2)$</p>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=fde8141b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=e6b48c26" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15151,7 +15151,7 @@ $\epsilon_i \sim N(0, \sigma^2)$</p>
 <h3 id="Maximum-likelihood-Estimate-for-linear-models">Maximum likelihood Estimate for linear models<a class="anchor-link" href="#Maximum-likelihood-Estimate-for-linear-models">&#182;</a></h3><ul>
 <li><p>What is the gradient and Hessian matrix for the log likelihood
 ($\mathcal{L}$) with respect to the parameter vector
-$\mathbf{\beta}=(\beta_0,...,\beta_p)$?</p>
+$\mathbf{\beta}=(\beta_0,...,\beta_p)'$?</p>
 $$\frac{\partial log \mathcal{L}}{\partial \mathbf{\beta}} = ?$$$$\frac{\partial^2 log \mathcal{L}}{\partial \mathbf{\beta} \partial \mathbf{\beta}'}
       = ?$$</li>
 </ul>
@@ -15160,7 +15160,7 @@ $$\frac{\partial log \mathcal{L}}{\partial \mathbf{\beta}} = ?$$$$\frac{\partial
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=95ae756f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=c5870905" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15182,7 +15182,7 @@ parameters.</p>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=8516ac22" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=663d2139" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15202,7 +15202,7 @@ $$Pr(y;p) = p^y (1-p)^{1-y}\!\quad \text{for }y\in\{0,1\}.$$</p>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=65cfd479" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=3c89b368" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15230,7 +15230,7 @@ $$\beta^{new} = \beta^{old} - \left(\frac{\partial^2l(\beta)}{\partial
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=c2c38aba" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=1ff3f1b4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15246,7 +15246,7 @@ coefficients in a logistic regression. The steps are:</p>
 </li>
 <li><p>Code these up in R/Python</p>
 </li>
-<li><p>Using the simulated data to test your code</p>
+<li><p>Using the following simulated data to test your code</p>
 </li>
 </ul>
 </li>
@@ -15255,12 +15255,12 @@ coefficients in a logistic regression. The steps are:</p>
 </div>
 </div>
 </div>
-</div></section></section><section ><section ><div id="cell-id=de241cda" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section></section><section ><section ><div id="cell-id=178d48ed" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Create some example data</span>

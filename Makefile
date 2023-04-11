@@ -10,4 +10,4 @@ zip:
 	git archive --output=statcomp-slides.zip HEAD
 
 sync:
-	rsync -av --delete-excluded --prune-empty-dirs --include '*/' --include '*slides.zip' --include '*.ipynb' --include '*.slides.html' --include 'figures/*'  --exclude '*' .  ${HOME}/nextcloud/feng.li/statcomp/
+	rsync -av --delete-excluded --prune-empty-dirs --include '*/' --include '*slides.zip' --include '*.ipynb' --include '*.slides.html' --include 'figures/*'	--include 'Literature/*.pdf'	 --exclude '*' . ${HOME}/nextcloud/feng.li/statcomp/
